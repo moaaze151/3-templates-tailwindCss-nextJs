@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+  }
+}
+@layer components {
+  /*Container..........*/
+  .cus-container {
+    @apply container mx-auto lg:max-w-[1100px];
+  }
+  /*main Color..........*/
+  .main-color {
+    @apply text-[#4398db];
+  }
+  /*main Hover..........*/
+  .main-hover {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  /*1-Navbar..........*/
+  .hidden-box {
+    @apply border-b-[3px] border-[#4398db] absolute left-0 top-[88px] 
+    sm:top-[55px] w-full bg-white main-color font-semibold 
+     text-base sm:flex justify-between sm:py-3 items-center;
+  }
+  .hidden-box:hover {
+    @apply main-hover;
+  }
+  .list-items {
+    @apply py-1 px-1  sm:px-3 cursor-pointer border-t-2 border-white;
+  }
+  .list-items:hover {
+    @apply bg-[#f5f5f5] main-color  border-[#4398db] main-hover;
+  }
+  .list-hidden {
+    @apply py-2 border-b cursor-pointer flex items-center;
+  }
+  .list-hidden a {
+    @apply ml-3;
+  }
+  .list-hidden:hover {
+    @apply bg-[#f5f5f5] main-hover;
+  }
+  /*2-heading..........*/
+  .heading {
+    @apply cursor-pointer border border-black text-xl font-extrabold px-5 py-2 relative 
+    main-hover hover:bg-[#4398db] hover:text-white hover:border-white ;
+  }
+  /*3-card..........*/
+  .card-item {
+    @apply  max-w-[330px] mb-8 shadow-sm shadow-gray-300 w-full sm:w-[48%] md:w-[32.5%] lg:w-[24%] rounded-md overflow-hidden
+    main-hover hover:shadow-2xl hover:scale-y-105 ;
+  }
+}
+@layer utilities {
+  .icon-anime {
+    animation-name: icons;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    bottom: 60px;
+  }
+  @keyframes icons {
+    from {
+      bottom: 40px;
+    }
+    to {
+      bottom: 20px;
+    }
+  }
+  .photo-anime {
+    animation-name: photo;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes photo {
+    0% {
+      margin-top: 60px;
+    }
+    100% {
+      margin-bottom: 70px;
+    }
+  }
+  .heading::before,
+  .heading::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4398db;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+  }
+  .heading::before {
+    left: -30px;
+  }
+  .heading::after {
+    right: -30px;
+  }
+  .heading:hover::after {
+    right: 0px;
+  }
+  .heading:hover::before {
+    left: 0px;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
