@@ -10,30 +10,37 @@
 @layer components {
   /*Container..........*/
   .cus-container {
-    @apply container mx-auto lg:max-w-[1100px];
+    @apply container px-4 flex flex-col items-center mx-auto lg:max-w-[1100px];
   }
-  /*main Color..........*/
+  /*Main Color, Main bg..........*/
   .main-color {
-    @apply text-[#4398db];
+    @apply text-[#03A9F4];
+  }
+  .main-bg {
+    @apply bg-[#03A9F4];
+  }
+  .main-border {
+    @apply border-[#03A9F4];
+  }
+  /*secondary background color Color..........*/
+  .sec-bg {
+    @apply bg-[#ececec];
   }
   /*main Hover..........*/
   .main-hover {
-    @apply transition-all duration-500 ease-in-out;
+    @apply transition-all duration-[400ms] ease-in-out;
   }
   /*1-Navbar..........*/
   .hidden-box {
-    @apply border-b-[3px] border-[#4398db] absolute left-0 top-[88px] 
-    sm:top-[55px] w-full bg-white main-color font-semibold 
+    @apply z-30 border-b-[3px] border-[#03A9F4] absolute left-0 top-[88px] 
+    sm:top-[55px] w-full bg-white main-color font-semibold main-hover
      text-base sm:flex justify-between sm:py-3 items-center;
   }
-  .hidden-box:hover {
-    @apply main-hover;
-  }
   .list-items {
-    @apply py-1 px-1  sm:px-3 cursor-pointer border-t-2 border-white;
+    @apply py-1 px-1  sm:px-3 cursor-pointer border-t-2 border-white main-hover;
   }
   .list-items:hover {
-    @apply bg-[#f5f5f5] main-color  border-[#4398db] main-hover;
+    @apply bg-[#f5f5f5] main-color  border-[#03A9F4];
   }
   .list-hidden {
     @apply py-2 border-b cursor-pointer flex items-center;
@@ -46,13 +53,32 @@
   }
   /*2-heading..........*/
   .heading {
-    @apply cursor-pointer border border-black text-xl font-extrabold px-5 py-2 relative 
-    main-hover hover:bg-[#4398db] hover:text-white hover:border-white ;
+    @apply cursor-pointer border-2 border-black text-xl font-extrabold duration-[1200ms]
+    px-5 py-2 relative main-hover hover:overflow-hidden hover:text-gray-50 
+    hover:border-white z-[10];
   }
   /*3-card..........*/
   .card-item {
-    @apply  max-w-[330px] mb-8 shadow-sm shadow-gray-300 w-full sm:w-[48%] md:w-[32.5%] lg:w-[24%] rounded-md overflow-hidden
-    main-hover hover:shadow-2xl hover:scale-y-105 ;
+    @apply max-w-[330px] mb-8 shadow-sm shadow-gray-300 w-full sm:w-[48%] md:w-[32.5%] lg:w-[24%] rounded-md overflow-hidden
+    main-hover hover:shadow-2xl hover:scale-y-105;
+  }
+  /*4-gallery*/
+  .gallery {
+    @apply mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 overflow-hidden;
+  }
+  .gallery-img {
+    @apply main-hover sm:mb-0 shadow-xl max-w-[400px] sm:max-w-[100%] border-[12px] border-white 
+    sm:col-span-1;
+  }
+  .image {
+    @apply main-hover  hover:rotate-[5deg] hover:scale-110;
+  }
+  /*5-videos*/
+  .hovered:hover {
+    @apply bg-gray-50 cursor-pointer;
+  }
+  .hovered:hover span:first-child {
+    @apply main-hover text-[#03A9F4];
   }
 }
 @layer utilities {
@@ -85,17 +111,19 @@
       margin-bottom: 70px;
     }
   }
+  /* Heading.................................*/
   .heading::before,
   .heading::after {
     content: "";
+    position: absolute;
+    transition: all 0.4s ease-in-out;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #4398db;
-    position: absolute;
+    background-color: #03a9f4;
     top: 50%;
     transform: translateY(-50%);
-    transition: all 0.3s ease-in-out;
+    z-index: -1;
   }
   .heading::before {
     left: -30px;
@@ -103,11 +131,198 @@
   .heading::after {
     right: -30px;
   }
+  .heading:hover::after,
+  .heading:hover::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+  }
   .heading:hover::after {
     right: 0px;
   }
   .heading:hover::before {
+    left: 0;
+  }
+  /* Features................................*/
+  .img-box {
+    overflow: hidden;
+  }
+  .img-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    color: red;
+    background: rgb(244 64 54 / 60%);
+    z-index: 10;
+  }
+  .second-bg::before {
+    background: rgb(0 150 136/60%);
+  }
+  .last-bg::before {
+    background: rgb(3 169 244 / 60%);
+  }
+  .img-box::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -50%;
+    background: rgb(255 255 255);
+    transform: skew(-70deg);
+    z-index: 11;
+    width: 400px;
+    height: 100%;
+    transition: all 0.35s ease-in-out;
+  }
+  .box-features:hover .img-box::after {
+    transform: rotate(20deg);
+    bottom: -80%;
+    width: 480px;
+    left:-25%;
+  }
+  /* Services ................................*/
+  .after-span:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -20px;
+    background: #d1d5db;
+    width: 50px;
+    transform: skewX(-30deg);
+  }
+  .ser-cards::before {
+    content: "";
+    background: #03a9f4;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    width: 0px;
+    height: 3px;
+    transition: all 0.4s ease-in-out;
+  }
+  .ser-cards:hover::before {
+    left: 0%;
+    width: 100%;
+  }
+  /* Skills ..................................*/
+  .skill-prog:before,
+  .skill-prog:after {
+    position: absolute;
+    top: -35px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .skill-prog:before {
+    content: attr(title);
     left: 0px;
+    font-weight: bold;
+    text-transform:capitalize;
+
+  }
+  .skill-prog:after {
+    content: attr(prog);
+    right: 0px;
+    width: 40px;
+    font-size: 0.80rem;
+    background:#fff;
+    border:1px solid #bbb;
+    border-radius:3px;
+    color:#03A9F4;
+
+  }
+  @media (max-width: 640px) {
+    .skill-prog:before,
+    .skill-prog:after {
+      top: -30px;
+      height: 25px;
+      font-size: 1rem;
+      border-radius: 2px;
+    }
+  }
+   /* work ..................................*/
+  .card-work:before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background: rgb(236, 236, 236);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease-in-out;
+    z-index:-1;
+  }
+  .card-work:hover:before {
+    width: 100%;
+    height: 100%;
+  }
+  /*Pricing*/
+  @media (min-width:1024px) {
+    .card-pricing:nth-child(2) {
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+  }
+  .card-pricing:before,
+  .card-pricing:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 50%;
+    background: rgba(236, 236, 236, 0.5);
+    transition: all 0.4s ease-in-out;
+    z-index:-1;
+
+  }
+  .card-pricing:before {
+    top: 0;
+    left: 0;
+  }
+  .card-pricing:after {
+    right: 0;
+    top: 50%;
+  }
+  .card-pricing:hover:before,
+  .card-pricing:hover:after {
+    width: 100%;
+  }
+  /* State .................................*/
+  .state:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 / 95%);
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+  }
+  .card-state:before,
+  .card-state:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0%;
+    background: #03a9f4;
+    transition:all 0.4s ease-in-out;
+  }
+  .card-state:before{
+    left: 0;
+    bottom: 0;
+  
+  }
+  .card-state:after{
+    right:0;
+    top: 0;
+  }
+  .card-state:hover:before,
+  .card-state:hover:after {
+    height: 100%;
   }
 }
 * {

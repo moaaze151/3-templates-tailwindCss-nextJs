@@ -1,10 +1,244 @@
 [
-    {"id":1,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-1.jpg"},
-    {"id":2,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-2.jpg"},
-    {"id":3,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-3.jpg"},
-    {"id":4,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-4.jpg"},
-    {"id":5,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-5.jpg"},
-    {"id":6,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-6.jpg"},
-    {"id":7,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-7.jpg"},
-    {"id":8,"title":"Test Title","text":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit","src":"cat-8.jpg"}
+  {
+    "articles": [
+      {
+        "id": 1,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-2.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-3.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-4.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-5.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-6.jpg"
+      },
+      {
+        "id": 7,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-7.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Test Title",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+        "src": "cat-8.jpg"
+      }
+    ]
+  },
+  {
+    "gallery": [
+      { "id": 1, "src": "gallery-01.png" },
+      { "id": 2, "src": "gallery-02.png" },
+      { "id": 3, "src": "gallery-03.jpg" },
+      { "id": 4, "src": "gallery-04.png" },
+      { "id": 5, "src": "gallery-05.jpg" },
+      { "id": 6, "src": "gallery-06.png" }
+    ]
+  },
+  {
+    "features": [
+      {
+        "id": 1,
+        "src": "features-01.jpg",
+        "title": "Quality",
+        "color": "#F44036",
+        "bg": "first-bg"
+      },
+      {
+        "id": 2,
+        "src": "features-02.jpg",
+        "title": "Time",
+        "color": "rgb(0 150 136)",
+        "bg": "second-bg"
+      },
+      {
+        "id": 3,
+        "src": "features-03.jpg",
+        "title": "Passion",
+        "color": "#03A9F4",
+        "bg": "last-bg"
+      }
+    ]
+  },
+  {
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Mohamed Farag",
+        "title": "Full Stack Developer",
+        "stars": 4,
+        "src": "avatar-01.png"
+      },
+      {
+        "id": 2,
+        "name": "Mohamed Ibrahim",
+        "title": "Full Stack Developer",
+        "stars": 4,
+        "src": "avatar-02.png"
+      },
+      {
+        "id": 3,
+        "name": "Shady Nabil",
+        "title": "Full Stack Developer",
+        "stars": 4,
+        "src": "avatar-03.png"
+      },
+      {
+        "id": 4,
+        "name": "Amr Hendawy",
+        "title": "Full Stack Developer",
+        "stars": 5,
+        "src": "avatar-04.png"
+      },
+      {
+        "id": 5,
+        "name": "Sherief Ashraf",
+        "title": "Full Stack Developer",
+        "stars": 3,
+        "src": "avatar-05.png"
+      },
+      {
+        "id": 6,
+        "name": "Osama Mohamed",
+        "title": "Full Stack Developer",
+        "stars": 3,
+        "src": "avatar-06.png"
+      }
+    ]
+  },
+  {
+    "members": [
+      { "id": 1, "src": "team-01.jpg" },
+      { "id": 2, "src": "team-02.jpg" },
+      { "id": 3, "src": "team-03.jpg" },
+      { "id": 4, "src": "team-04.jpg" },
+      { "id": 5, "src": "team-05.png" },
+      { "id": 6, "src": "team-06.png" },
+      { "id": 7, "src": "team-07.jpg" },
+      { "id": 8, "src": "team-08.jpg" }
+    ]
+  },
+  {
+    "skills": [
+      { "id": 1, "progress": "92", "title": "Html" },
+      { "id": 2, "progress": "90", "title": "css" },
+      { "id": 3, "progress": "80", "title": "Sass" },
+      { "id": 4, "progress": "75", "title": "Js" }
+    ]
+  },
+  {
+    "works": [
+      { "id": 1, "src": "work-steps-1.png", "title": "Business Analysis" },
+      { "id": 2, "src": "work-steps-2.png", "title": "Architecture" },
+      { "id": 3, "src": "work-steps-3.png", "title": "Developement" }
+    ]
+  },
+  {
+    "pricing": [
+      {
+        "id": 1,
+        "title": "Basic",
+        "price": 15,
+        "src": "hosting-basic.png",
+        "info": [
+          "10GB HDD Space",
+          "5 Emails Addresses",
+          "2 Subdomains",
+          "4 Databases",
+          "basic Support"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Advanced",
+        "price": 25,
+        "src": "hosting-advanced.png",
+        "info": [
+          "20GB HDD Space",
+          "10 Emails Addresses",
+          "5 Subdomains",
+          "8 Databases",
+          "Advanced Support"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Professional",
+        "price": 45,
+        "src": "hosting-professional.png",
+        "info": [
+          "50GB HDD Space",
+          "20 Emails Addresses",
+          "10 Subdomains",
+          "20 Databases",
+          "Professional Support"
+        ]
+      }
+    ]
+  },
+  {
+    "videos": [
+      {
+        "id": 1,
+        "title": "How To Create Sub Domain",
+        "time": "05:18"
+      },
+      {
+        "id": 2,
+        "title": "Playing With The DNS",
+        "time": "03:18"
+      },
+      {
+        "id": 3,
+        "title": "Everything About The Virtual Hosts",
+        "time": "05:25"
+      },
+      {
+        "id": 4,
+        "title": "How To Monitor Your Website",
+        "time": "04:16"
+      },
+      {
+        "id": 5,
+        "title": "Uncharted Beating The Last Boss",
+        "time": "07:48"
+      },
+      {
+        "id": 6,
+        "title": "Ys Oath In Felghana Overview",
+        "time": "03:12"
+      },
+      {
+        "id": 7,
+        "title": "Ys Series All Games Ending",
+        "time": "08:10"
+      }
+    ]
+  }
 ]

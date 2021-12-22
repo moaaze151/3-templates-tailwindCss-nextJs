@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Image from "next/image";
 import {
   FaRegComments,
@@ -16,9 +16,15 @@ import {
 import Link from "next/link";
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setActiveLink(false);
+    });
+   
+  }, [])
   return (
-    <header className=" py-2 px-2  sm:py-3">
-      <div className="cus-container relative flex flex-col sm:flex-row sm:justify-between items-center">
+    <header className=" py-2 sm:py-3">
+      <div className="cus-container relative  sm:flex-row sm:justify-between">
         {/*logo*/}
         <h2 className="flex-1 text-xl  main-color mb-3 sm:mb-0 font-bold">
           <Link href="/">Mo3az_Dv</Link>
@@ -77,7 +83,7 @@ export default function Navbar() {
                   <FaBars /> <Link href="#pricing">Pricing Plans</Link>
                 </li>
                 <li className="list-hidden">
-                  <FaVideo /> <Link href="#features">Top Videos</Link>
+                  <FaVideo /> <Link href="#videos">Top Videos</Link>
                 </li>
                 <li className="list-hidden">
                   <FaSignal /> <Link href="#state">State</Link>
@@ -93,4 +99,3 @@ export default function Navbar() {
     </header>
   );
 }
-//  <FaFacebook className="text-red-600 text-5xl" />

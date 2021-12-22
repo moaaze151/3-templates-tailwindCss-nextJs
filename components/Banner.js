@@ -4,10 +4,10 @@ import { FaChevronDown } from "react-icons/fa";
 export default function Banner() {
     const router = useRouter();
   return (
-    <div className="px-2 bg-[#ececec] relative h-[85.5vh] sm:h-[90.5vh]  overflow-hidden">
+    <div className="sec-bg relative h-[85.5vh] sm:h-[90.5vh]  overflow-hidden">
       <div
-        className="cus-container h-full -mt-16  flex flex-col md:flex-row
-      items-center justify-center md:justify-between text-center md:text-left"
+        className="cus-container md:flex-row h-full -mt-16
+       justify-center md:justify-between text-center md:text-left"
       >
         {/*First Part*/}
         <div className="md:flex-1">
