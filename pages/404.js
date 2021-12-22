@@ -7,7 +7,7 @@ export default function PageNotFound() {
   }
   return (
     <div>
-      <h1>The Page isn't exist</h1>
+      <h1>The Page isnt exist</h1>
       <button
         style={{ cursor: "pointer", padding: "10px" }}
         onClick={() => returnToHome()}
